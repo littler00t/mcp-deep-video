@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "video": {
+      "command": "uv",
+      "args": ["run", "python", "-m", "mcp_video_server"],
+      "env": {
+        "MCP_VIDEO_ROOT": "./example_videos",
+	      "GROQ_API_KEY": "<provide or omit for local whisper model>"
+      }
+    }
+  }
+}

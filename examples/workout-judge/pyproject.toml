@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "workout-judge"
+version = "0.1.0"
+requires-python = ">=3.11"
+description = "AI-powered exercise form analysis using Claude and MCP Video Server"
+dependencies = [
+    "mcp-video-server",
+    "pydantic-ai[anthropic]>=0.1.63",
+    "rich>=13.7.0",
+    "click>=8.1.7",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+workout-judge = "workout_judge.main:cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/workout_judge"]
+
+[tool.uv.sources]
+mcp-video-server = { workspace = true }
